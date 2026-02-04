@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's over 9000</title>
+    <style>
+        /* ตกแต่งนิดหน่อยให้ดูง่าย */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        input, select {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="leftMember" placeholder="Left number">
+    
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+
+    <input type="text" id="rightMember" placeholder="Right number">
+    
+    <input type="submit" id="calculateBtn" value="Try me!">
+
+    <script>
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+        
+        const btn = document.getElementById('calculateBtn');
+        
+        btn.addEventListener('click', function() {
+            const leftInput = document.getElementById('leftMember').value;
+            const rightInput = document.getElementById('rightMember').value;
+            const op = document.getElementById('operator').value;
+
+            const l = parseInt(leftInput);
+            const r = parseInt(rightInput);
+
+            if (isNaN(l) || isNaN(r) || l < 0 || r < 0 || 
+                leftInput != l || rightInput != r) { 
+                alert('Error :(');
+                console.log('Error :('); 
+                return;
+            }
+
+            if ((op === '/' || op === '%') && r === 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+
+            let result = 0;
+            switch(op) {
+                case '+': result = l + r; break;
+                case '-': result = l - r; break;
+                case '*': result = l * r; break;
+                case '/': result = l / r; break;
+                case '%': result = l % r; break;
+            }
+
+            console.log(result);
+            alert(result);
+        });
+    </script>
+</body>
+</html>
