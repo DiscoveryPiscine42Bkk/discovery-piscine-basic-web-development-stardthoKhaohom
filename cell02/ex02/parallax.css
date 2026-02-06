@@ -1,0 +1,49 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.parallax-block {
+    min-height: 500px; 
+
+    background-attachment: fixed;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-img1 {
+    background-image: url('https://wpcdn.web.wsu.edu/news/uploads/sites/2797/2025/03/cat2-1024x676.jpg'); 
+}
+
+.bg-img2 {
+    background-image: url('https://www.purina.co.nz/sites/default/files/2025-09/AOA_CENMKTG_PU_Website%20Article_27-Your%20Cat%27s%20Age%20in%20Human%20Years_1440x560px_091625_1.jpg'); 
+}
+
+.static-block {
+    height: 400px; 
+    background-color: black;
+    color: white;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-text {
+    font-size: 14px;
+    background-color: white; 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.static-block .center-text {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
