@@ -1,0 +1,147 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff7b9;
+    color: #291e16;
+}
+
+.sidebar {
+    height: 100vh; width: 250px; background-color: #ffa9b9;
+    position: fixed; top: 0; left: 0; padding-top: 30px;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.4); z-index: 100;
+}
+.sidebar .logo {
+    color: #ad2525; text-align: center; font-size: 22px; font-weight: 600;
+    margin-bottom: 40px; position: relative; padding-bottom: 15px;
+}
+.sidebar .logo::after {
+    content: ''; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%); width: 50px; height: 3px;
+    background-color: #1c0b0b; border-radius: 3px;
+}
+.sidebar a {
+    text-decoration: none; font-size: 16px; color: #ad2525;
+    display: block; transition: all 0.3s ease;
+    margin: 10px 15px; padding: 15px 20px; border-radius: 12px;
+    border: 2px solid transparent; background-color: rgba(255, 255, 255, 0.05);
+}
+.sidebar a:hover {
+    color: #ad2525; background-color: rgba(255, 237, 237, 0.359);
+    border-color: #ac4c4c; box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    transform: translateX(5px);
+}
+
+.content { margin-left: 250px; padding: 40px; }
+section {
+    background: white; padding: 40px; margin-bottom: 30px;
+    border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+section h1 {
+    color: #222; border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 15px; margin-bottom: 25px; font-size: 28px;
+}
+
+.about-container {
+    display: flex; align-items: center; gap: 50px;
+}
+.about-image { flex: 0 0 350px; }
+.about-image img {
+    width: 100%; height: auto; border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    aspect-ratio: 1 / 1; object-fit: cover;
+}
+.about-text { flex: 1; }
+.about-text h2 { font-size: 24px; margin-bottom: 15px; color: #00d2ff; }
+.about-text p { line-height: 1.6; margin-bottom: 15px; }
+
+.btn-contact {
+    display: inline-block;
+    background-color: #00d2ff; color: white;
+    padding: 10px 25px; text-decoration: none;
+    border-radius: 25px; font-weight: bold;
+    transition: background 0.3s;
+}
+.btn-contact:hover { background-color: #00b0d9; }
+.social-icons {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.social-icons .icon-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 32px;
+    transition: all 0.3s ease;
+}
+
+.social-icons .icon-link:hover {
+    color: #00d2ff;
+    transform: translateY(-5px);
+}
+
+.showcase-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    
+    margin-bottom: 80px; 
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 40px;
+}
+
+.showcase-container:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+
+.showcase-image {
+    width: 100%;    
+    max-width: 800px;   
+    margin-bottom: 25px;    
+}
+
+.showcase-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    object-fit: cover;
+    aspect-ratio: 16 / 9; 
+    transition: transform 0.3s ease;
+}
+
+.showcase-text {
+    max-width: 600px;
+    margin: 0 auto; 
+}
+
+.showcase-text h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #00d2ff;
+}
+
+.showcase-text p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 18px;
+}
+@media screen and (max-width: 900px) {
+    .sidebar {
+        width: 100%; height: auto; position: relative;
+        padding: 20px 0; display: flex; flex-direction: column; align-items: center;
+    }
+    .sidebar .logo::after { display: none; }
+    .sidebar a { width: 90%; text-align: center; margin: 5px 0; }
+    .sidebar a:hover { transform: none; }
+    .content { margin-left: 0; padding: 20px; }
+
+    .about-container { flex-direction: column; text-align: center; gap: 30px; }
+    .about-image { flex: 0 0 auto; width: 80%; max-width: 400px; }
+    section h1 { text-align: center; }
+}
